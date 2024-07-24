@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The Results are here</h1>
+    <h3>The data you enered is: {{lis}}</h3>
+    <h3>The category of the glass is {{ans}}</h3>
+    <pre>
+        Type of glass: (class attribute)
+      -- 1 building_windows_float_processed
+      -- 2 building_windows_non_float_processed
+      -- 3 vehicle_windows_float_processed
+      -- 4 vehicle_windows_non_float_processed (none in this database)
+      -- 5 containers
+      -- 6 tableware
+      -- 7 headlamps
+    </pre>
+    The result is {{ans}}
+    <a href="{% url 'home' %}">Click here to Go to Home</a>
+
+</body>
+</html>
