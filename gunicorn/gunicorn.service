@@ -3,10 +3,10 @@ Description=gunicorn daemon
 Requires=gunicorn.socket
 After=network.target
 [Service]
-User=ubuntu
+User=windows
 Group=www-data
-WorkingDirectory=/home/ubuntu/blogprojectdrf
-ExecStart=/home/ubuntu/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/blogprojectdrf/blog/blog.sock blog.wsgi:application
+WorkingDirectory=/home/ubuntu/deploymodel
+ExecStart=/home/ubuntu/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/deploymodel/deploymodel/deploymodel.sock deploymodel.wsgi:application
 
        
 [Install]
