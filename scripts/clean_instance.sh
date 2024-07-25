@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-sudo rm -rf /home/windows/deploymodel/*
+sudo rm -rf /home/ubuntu/deploy_app/*

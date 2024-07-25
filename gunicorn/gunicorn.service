@@ -5,8 +5,8 @@ After=network.target
 [Service]
 User=windows
 Group=www-data
-WorkingDirectory=/home/ubuntu/deploymodel
-ExecStart=/home/ubuntu/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/deploymodel/deploymodel/deploymodel.sock deploymodel.wsgi:application
+WorkingDirectory=/home/ubuntu/deploy_app
+ExecStart=/home/ubuntu/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/deploy_app/deploymodel/deploymodel.sock deploymodel.wsgi:application
 
        
 [Install]

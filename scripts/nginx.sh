@@ -4,10 +4,10 @@
 sudo systemctl daemon-reload
 sudo rm -f /etc/nginx/sites-enabled/default
 
-sudo cp /home/windows/deploymodel/nginx/nginx.conf /etc/nginx/sites-available/blog
+sudo cp /home/ubuntu/deploy_app/nginx/nginx.conf /etc/nginx/sites-available/blog
 sudo ln -s /etc/nginx/sites-available/blog /etc/nginx/sites-enabled/
 #sudo ln -s /etc/nginx/sites-available/blog /etc/nginx/sites-enabled
 #sudo nginx -t
-sudo gpasswd -a www-data windows
+sudo gpasswd -a www-data ubuntu
 sudo systemctl restart nginx
 
