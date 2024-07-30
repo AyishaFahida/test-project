@@ -1,6 +1,6 @@
 #!/usr/bin/bash 
 
-sed -i 's/\[]/\["54.144.250.113"]/' /home/ubuntu/deploy_app/deploymodel/settings.py
+sed -i 's/\[]/\["13.200.225.141"]/' /home/ubuntu/deploy_app/deploymodel/settings.py
 
 python manage.py migrate 
 python manage.py makemigrations     
