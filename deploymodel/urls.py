@@ -19,9 +19,9 @@ from django.urls import path
 from deploy_app import views
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("hello/",views.welcome,name='home'),
-    path("result/",views.result,name='result')
-
-
+    path('admin/', admin.site.urls),
+    path('ec2-13-200-225-141.ap-south-1.compute.amazonaws.com', views.home, name='root'),  # Add this line
+    path('hello/', views.home, name='home'),
+    path('result/', views.result, name='result'),
 ]
+
