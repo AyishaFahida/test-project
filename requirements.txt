@@ -3,3 +3,4 @@ numpy
 django
 joblib
 gunicorn
+sklearn
