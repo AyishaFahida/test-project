@@ -9,8 +9,11 @@ sudo rm -f /etc/nginx/sites-enabled/default
 # Copy new configuration
 sudo cp /home/ubuntu/deploy_app/nginx/nginx.conf /etc/nginx/sites-available/deploymodel
 
-# Create symbolic link (if it doesn't exist)
-sudo ln -sf /etc/nginx/sites-available/deploymodel /etc/nginx/sites-enabled/
+# Remove old symbolic link if it exists
+sudo rm -f /etc/nginx/sites-enabled/deploymodel
+
+# Create new symbolic link
+sudo ln -s /etc/nginx/sites-available/deploymodel /etc/nginx/sites-enabled/deploymodel
 
 # Add www-data user to ubuntu group
 sudo gpasswd -a www-data ubuntu
