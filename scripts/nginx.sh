@@ -1,13 +1,27 @@
-
 #!/usr/bin/bash
 
+# Reload systemd daemon
 sudo systemctl daemon-reload
+
+# Remove default Nginx site
 sudo rm -f /etc/nginx/sites-enabled/default
 
-sudo cp /home/ubuntu/deploy_app/nginx/nginx.conf /etc/nginx/sites-available/blog
-sudo ln -s /etc/nginx/sites-available/deploymodel /etc/nginx/sites-enabled/
-#sudo ln -s /etc/nginx/sites-available/deploymodel /etc/nginx/sites-enabled
-#sudo nginx -t
-sudo gpasswd -a www-data ubuntu
-sudo systemctl restart nginx
+# Copy new configuration
+sudo cp /home/ubuntu/deploy_app/nginx/nginx.conf /etc/nginx/sites-available/deploymodel
 
+# Create symbolic link (if it doesn't exist)
+sudo ln -sf /etc/nginx/sites-available/deploymodel /etc/nginx/sites-enabled/
+
+# Add www-data user to ubuntu group
+sudo gpasswd -a www-data ubuntu
+
+# Test Nginx configuration
+sudo nginx -t
+
+# If test passes, restart Nginx
+if [ $? -eq 0 ]; then
+    sudo systemctl restart nginx
+else
+    echo "Nginx configuration test failed. Please check your configuration."
+    exit 1
+fi
