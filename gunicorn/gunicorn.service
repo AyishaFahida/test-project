@@ -3,7 +3,7 @@ Description=gunicorn daemon
 Requires=gunicorn.socket
 After=network.target
 [Service]
-User=windows
+User=ubuntu
 Group=www-data
 WorkingDirectory=/home/ubuntu/deploy_app
 ExecStart=/home/ubuntu/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/ubuntu/deploy_app/deploymodel/deploymodel.sock deploymodel.wsgi:application

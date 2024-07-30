@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-virtualenv /home/windows/env
-source /home/windows/env/bin/activate
-pip install -r /home/windows/deploymodel/requirements.txt
+virtualenv /home/ubuntu/env
+source /home/ubuntu/env/bin/activate
+pip install -r /home/ubuntu/deploy_app/requirements.txt
